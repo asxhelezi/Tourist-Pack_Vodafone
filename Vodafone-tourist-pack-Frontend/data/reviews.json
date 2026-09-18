@@ -1,0 +1,50 @@
+{
+  "comment": "Sample reviews (spec 11.3). Not real App Store / Play Store content. Connect an approved review feed via lib/reviewsProvider.ts and set verified:true only for reviews from an authorized source.",
+  "reviews": [
+    {
+      "id": "review-anna",
+      "rating": 5,
+      "text": "The internet worked perfectly in Ksamil.",
+      "name": "Anna",
+      "country": "Germany",
+      "source": "sample",
+      "verified": false
+    },
+    {
+      "id": "review-john",
+      "rating": 5,
+      "text": "Coverage was amazing.",
+      "name": "John",
+      "country": "USA",
+      "source": "sample",
+      "verified": false
+    },
+    {
+      "id": "review-marie",
+      "rating": 5,
+      "text": "Buying the tourist pack took two minutes at the airport.",
+      "name": "Marie",
+      "country": "France",
+      "source": "sample",
+      "verified": false
+    },
+    {
+      "id": "review-luca",
+      "rating": 4,
+      "text": "Good 4G even on the ferry to Komani Lake.",
+      "name": "Luca",
+      "country": "Italy",
+      "source": "sample",
+      "verified": false
+    },
+    {
+      "id": "review-eva",
+      "rating": 5,
+      "text": "Support helped me in English right away.",
+      "name": "Eva",
+      "country": "Czech Republic",
+      "source": "sample",
+      "verified": false
+    }
+  ]
+}

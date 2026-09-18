@@ -1,0 +1,20 @@
+{
+  "greeting": "Dobrý den! Pomohu vám s turistickými balíčky, aktivací, destinacemi, akcemi, měnou i pomocí v nouzi. Co potřebujete?",
+  "packs": "Máme 4 turistické balíčky od 500 ALL (3 dny) do 2,500 ALL (30 dní), všechny s daty, minutami a informacemi o roamingu v EU. Otevřete sekci Turistické balíčky, kde je můžete porovnat nebo si sestavit vlastní.",
+  "buildPack": "Použijte záložku \"Sestavte si balíček\": nastavte dny, data a volání pomocí posuvníků a doporučím vám nejbližší dostupný balíček se skóre shody.",
+  "groupPack": "Ceny pro skupiny: 2 osoby 2,600 ALL (ušetříte 400), 3 osoby 3,900 ALL (ušetříte 600). Pro 4 a více osob nabízíme individuální skupinovou možnost. Viz sekce balíčků.",
+  "activation": "Aktivace probíhá ve 3 krocích: vyberte balíček, potvrďte a váš \"cestovní pas\" dostane razítko.",
+  "support": "Podpora Vodafone je k dispozici na čísle 140. Prodejny Vodafone najdete také ve vrstvě Prodejny na mapě.",
+  "emergency": "Pokud jde o nouzovou situaci, volejte hned: Tísňová linka 112, Policie 129, Záchranná služba 127, Hasiči 128 (ověřte si je na místě). Sekce podpory obsahuje tlačítka pro rychlé volání a sdílení polohy.",
+  "lostHelp": "Zachovejte klid. Použijte červené tlačítko \"Ztratil jsem se\" (vlevo dole) — můžete zavolat o pomoc, sdílet svou polohu nebo najít nejbližší taxi, nemocnici či prodejnu Vodafone.",
+  "lostPassport": "Při ztrátě pasu nebo dokladu: 1) kontaktujte místní policii (129), 2) kontaktujte své velvyslanectví — Adresář velvyslanectví v sekci Podpora obsahuje kontakty pro 8 zemí, 3) pokud máte, uchovejte si digitální kopii. Jde o obecné doporučení, nikoli právní radu.",
+  "destinations": "Albánie nabízí úžasné pláže (Ksamil, Dhërmi), města UNESCO (Berat, Gjirokastër, Butrint) a vysokohorské túry (Theth, Valbona). Otevřete mapu Prozkoumat a filtrujte podle svého cestovního stylu.",
+  "transport": "Používejte pouze licencovaná taxi a předem si domluvte cenu nebo požádejte o taxametr. Číslo na místní taxi najdete v nouzovém panelu. Jsou tam i odkazy na Google Maps pro taxi, nemocnice a prodejny.",
+  "internet": "Všechny turistické balíčky obsahují mobilní data (2–25 GB). Pokud je internet pomalý, zkontrolujte vrstvu Pokrytí na mapě nebo zavolejte podporu na 140.",
+  "coverage": "Zkontrolujte vrstvu Pokrytí Vodafone na mapě Prozkoumat: klepněte na region, například Tirana nebo Riviéra, a uvidíte úrovně signálu (Výborný/Dobrý/Omezený) a zajímavost navíc. Ilustrační data, nikoli oficiální měření.",
+  "events": "Sekce Dnešní akce ukazuje, co se v Albánii děje — koncerty, festivaly, trhy — s filtry pro dnešek, zítřek a tento týden. Akce se automaticky aktualizují z živých a místních zdrojů.",
+  "safety": "Albánie je obecně pohostinná země. Hlavní tipy: pouze licencovaná taxi, peníze měňte v oficiálních směnárnách, tísňové číslo 112, v davu si hlídejte osobní věci. Aktuální upozornění najdete v sekci Bezpečnost.",
+  "currency": "Ceny se vždy zobrazují v albánských lecích (ALL) s přibližným převodem na EUR, USD, GBP nebo CHF. Pomocí přepínače měny v záhlaví můžete měnu změnit a otevřít úplný převodník.",
+  "offlineGuide": "Stáhněte si Offline cestovní sadu v sekci Podpora: tísňová čísla, kontakty na velvyslanectví a albánské fráze v jednom souboru, který můžete uložit jako PDF přes tiskový dialog prohlížeče.",
+  "noMatchExtra": "Zkuste se zeptat na balíčky, aktivaci, pokrytí, destinace, akce, měnu nebo pomoc v nouzi."
+}

@@ -1,0 +1,20 @@
+{
+  "greeting": "Hallo! Ich helfe Ihnen gern bei Touristenpaketen, Aktivierung, Reisezielen, Events, Währung und Notfallhilfe. Was brauchen Sie?",
+  "packs": "Wir haben 4 Touristenpakete von 500 ALL (3 Tage) bis 2,500 ALL (30 Tage), alle mit Datenvolumen, Minuten und Infos zum EU-Roaming. Öffnen Sie den Bereich Touristenpakete, um sie zu vergleichen oder Ihr eigenes Paket zusammenzustellen.",
+  "buildPack": "Nutzen Sie den Tab \"Paket selbst zusammenstellen\": Stellen Sie Tage, Datenvolumen und Anrufe mit den Schiebereglern ein, und ich empfehle Ihnen das passendste verfügbare Paket mit einem Passungswert.",
+  "groupPack": "Gruppenpreise: 2 Personen 2,600 ALL (400 sparen), 3 Personen 3,900 ALL (600 sparen). Ab 4 Personen zeigen wir eine individuelle Gruppenoption. Siehe Paketbereich.",
+  "activation": "Die Aktivierung erfolgt in 3 Schritten: Paket wählen, bestätigen, und Ihr \"Reisepass\" erhält einen Stempel.",
+  "support": "Der Vodafone-Support ist unter 140 erreichbar. Vodafone-Shops finden Sie außerdem auf der Karten-Ebene \"Shops\".",
+  "emergency": "Wenn dies ein Notfall ist, rufen Sie sofort an: Allgemeiner Notruf 112, Polizei 129, Rettungsdienst 127, Feuerwehr 128 (vor Ort prüfen). Der Support-Bereich bietet Direktwahl-Buttons und Standortfreigabe.",
+  "lostHelp": "Bleiben Sie ruhig. Nutzen Sie den roten Button \"Ich habe mich verlaufen\" (unten links), um Hilfe zu rufen, Ihren Standort zu teilen oder ein Taxi, Krankenhaus oder einen Vodafone-Shop in der Nähe zu finden.",
+  "lostPassport": "Bei verlorenem Reisepass oder Ausweis: 1) Kontaktieren Sie die örtliche Polizei (129), 2) kontaktieren Sie Ihre Botschaft — das Botschaftsverzeichnis im Support-Bereich enthält Kontakte für 8 Länder, 3) bewahren Sie wenn möglich eine digitale Kopie auf. Dies ist eine allgemeine Orientierung, keine Rechtsberatung.",
+  "destinations": "Albanien bietet traumhafte Strände (Ksamil, Dhërmi), UNESCO-Städte (Berat, Gjirokastër, Butrint) und alpine Wanderungen (Theth, Valbona). Öffnen Sie die Entdecken-Karte und filtern Sie nach Ihrem Reisestil.",
+  "transport": "Nutzen Sie nur lizenzierte Taxis und vereinbaren Sie vorher den Preis oder bitten Sie um das Taxameter. Eine örtliche Taxinummer finden Sie im Notfall-Menü. Dort gibt es auch Google-Maps-Links zu Taxis, Krankenhäusern und Shops.",
+  "internet": "Alle Touristenpakete enthalten mobile Daten (2–25 GB). Wenn Ihr Internet langsam ist, prüfen Sie die Netzabdeckungs-Ebene auf der Karte oder rufen Sie den Support unter 140 an.",
+  "coverage": "Prüfen Sie die Vodafone-Netzabdeckungs-Ebene auf der Entdecken-Karte: Tippen Sie auf eine Region wie Tirana oder die Riviera, um Signalstärken (Ausgezeichnet/Gut/Eingeschränkt) plus einen Fun Fact zu sehen. Illustrative Daten, keine offiziellen Messungen.",
+  "events": "Der Bereich Heutige Events zeigt, was in Albanien los ist — Konzerte, Festivals, Märkte — mit Filtern für heute, morgen und diese Woche. Events werden automatisch aus Live- und lokalen Quellen aktualisiert.",
+  "safety": "Albanien ist im Allgemeinen gastfreundlich. Wichtige Tipps: nur lizenzierte Taxis, Geld nur in offiziellen Wechselstuben tauschen, Notrufnummer 112, in Menschenmengen auf Wertsachen achten. Aktuelle Hinweise finden Sie im Bereich Sicherheit.",
+  "currency": "Preise werden immer in albanischen Lek (ALL) mit einer ungefähren Umrechnung in EUR, USD, GBP oder CHF angezeigt. Nutzen Sie die Währungsauswahl in der Kopfzeile, um zu wechseln und den vollständigen Umrechner zu öffnen.",
+  "offlineGuide": "Laden Sie das Offline-Reisekit im Support-Bereich herunter: Notrufnummern, Botschaftskontakte und albanische Redewendungen in einer Datei, die Sie über den Druckdialog Ihres Browsers als PDF speichern können.",
+  "noMatchExtra": "Fragen Sie zum Beispiel nach Paketen, Aktivierung, Netzabdeckung, Reisezielen, Events, Währung oder Notfallhilfe."
+}

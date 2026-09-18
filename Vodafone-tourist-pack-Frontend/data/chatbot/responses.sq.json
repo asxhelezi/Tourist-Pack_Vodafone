@@ -1,0 +1,20 @@
+{
+  "greeting": "Përshëndetje! Mund t'ju ndihmoj me paketat turistike, aktivizimin, destinacionet, eventet, monedhën dhe ndihmën në raste urgjence. Për çfarë keni nevojë?",
+  "packs": "Kemi 4 paketa turistike nga 500 ALL (3 ditë) deri në 2,500 ALL (30 ditë), të gjitha me internet, minuta dhe informacion për roaming në BE. Hapni seksionin e Paketave Turistike për t'i krahasuar ose ndërtoni paketën tuaj.",
+  "buildPack": "Përdorni skedën \"Ndërto Paketën Tënde\": zgjidhni ditët, internetin dhe telefonatat me rrëshqitës dhe unë do t'ju rekomandoj paketën më të afërt të disponueshme me një pikë përshtatjeje.",
+  "groupPack": "Çmimet për grupe: 2 persona 2,600 ALL (kurseni 400), 3 persona 3,900 ALL (kurseni 600). Për 4+ persona shfaqim një opsion grupi të personalizuar. Shihni seksionin e paketave.",
+  "activation": "Aktivizimi bëhet në 3 hapa: zgjidhni paketën, konfirmoni dhe \"pasaporta juaj e udhëtimit\" vuloset.",
+  "support": "Mbështetja e Vodafone është e disponueshme në 140. Mund të gjeni gjithashtu dyqanet Vodafone në shtresën e Dyqaneve në hartë.",
+  "emergency": "Nëse kjo është një urgjencë, telefononi tani: Urgjenca e përgjithshme 112, Policia 129, Ambulanca 127, Zjarrfikësit 128 (verifikojini në vend). Seksioni i mbështetjes ka butona telefonimi me një prekje dhe ndarje të vendndodhjes.",
+  "lostHelp": "Qëndroni të qetë. Përdorni butonin e kuq \"U Humba\" (poshtë majtas) për të kërkuar ndihmë, për të ndarë vendndodhjen tuaj ose për të gjetur një taksi, spital apo dyqan Vodafone aty pranë.",
+  "lostPassport": "Për pasaportë ose ID të humbur: 1) kontaktoni policinë lokale (129), 2) kontaktoni ambasadën tuaj — Direktoria e Ambasadave në seksionin e Mbështetjes ka kontakte për 8 shtete, 3) mbani një kopje dixhitale nëse e keni. Ky është udhëzim i përgjithshëm, jo këshillë ligjore.",
+  "destinations": "Shqipëria ka plazhe mahnitëse (Ksamil, Dhërmi), qytete UNESCO (Berat, Gjirokastër, Butrint) dhe shtigje alpine (Theth, Valbona). Hapni hartën Eksploro dhe filtroni sipas stilit tuaj të udhëtimit.",
+  "transport": "Përdorni vetëm taksi të licencuara dhe bini dakord për çmimin ose kërkoni taksimetrin që në fillim. Një numër taksie lokale ndodhet në sirtarin e urgjencës. Aty gjenden edhe lidhjet e Google Maps për taksi, spitale dhe dyqane.",
+  "internet": "Të gjitha paketat turistike përfshijnë internet celular (2–25 GB). Nëse interneti është i ngadaltë, kontrolloni shtresën e Mbulimit në hartë ose telefononi mbështetjen në 140.",
+  "coverage": "Kontrolloni shtresën e Mbulimit Vodafone në hartën Eksploro: prekni një rajon si Tirana ose Riviera për të parë nivelet e sinjalit (I shkëlqyer/I mirë/I kufizuar) plus një fakt interesant. Të dhëna ilustruese, jo matje zyrtare.",
+  "events": "Seksioni Eventet e Sotme tregon çfarë po ndodh në Shqipëri — koncerte, festivale, tregje — me filtra për sot, nesër dhe këtë javë. Eventet përditësohen automatikisht nga burime live dhe lokale.",
+  "safety": "Shqipëria është përgjithësisht mikpritëse. Këshilla kryesore: vetëm taksi të licencuara, këmbeni para në zyra zyrtare, numri i urgjencës 112, kujdesuni për sendet tuaja në turma. Njoftimet aktuale gjenden në seksionin e Sigurisë.",
+  "currency": "Çmimet shfaqen gjithmonë në Lekë shqiptarë (ALL) me një konvertim të përafërt në EUR, USD, GBP ose CHF. Përdorni zgjedhësin e monedhës në krye për të ndryshuar dhe për të hapur konvertuesin e plotë.",
+  "offlineGuide": "Shkarkoni Paketën e Udhëtimit Offline në seksionin e Mbështetjes: numrat e urgjencës, kontaktet e ambasadave dhe fraza shqipe në një skedar që mund ta ruani si PDF përmes dritares së printimit të shfletuesit tuaj.",
+  "noMatchExtra": "Provoni të pyesni për paketat, aktivizimin, mbulimin, destinacionet, eventet, monedhën ose ndihmën urgjente."
+}
