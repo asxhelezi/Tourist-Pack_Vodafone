@@ -18,7 +18,7 @@
   <description>Purchase-to-activation backend for the Vodafone Albania Tourist Pack app</description>
 
   <properties>
-    <java.version>25</java.version>
+    <java.version>21</java.version>
     <postgresql.version>42.7.12</postgresql.version>
     <zxing.version>3.5.3</zxing.version>
     <lombok.version>1.18.38</lombok.version>
@@ -143,3 +143,4 @@
     </plugins>
   </build>
 </project>
+
