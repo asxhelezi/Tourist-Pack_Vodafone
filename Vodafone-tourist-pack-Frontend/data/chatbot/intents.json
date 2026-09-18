@@ -1,0 +1,1459 @@
+{
+  "comment": "JSON chatbot knowledge (spec 12.2). English canonical intents; 'aliases' maps non-English keywords to this canonical intent (multilingual keyword mapping, no external AI). Higher priority wins ties; emergency intents are always checked first.",
+  "intents": [
+    {
+      "id": "emergency",
+      "priority": 100,
+      "emergency": true,
+      "keywords": [
+        "emergency",
+        "police",
+        "ambulance",
+        "fire",
+        "danger",
+        "stolen",
+        "urgent",
+        "112",
+        "129",
+        "127",
+        "128",
+        "hospital",
+        "accident"
+      ],
+      "phrases": [
+        "i need help",
+        "call the police",
+        "i am in danger"
+      ],
+      "aliases": {
+        "sq": [
+          "urgjencë",
+          "polici",
+          "ambulancë",
+          "zjarr",
+          "ndihmë",
+          "vjedhur",
+          "spital",
+          "aksident"
+        ],
+        "es": [
+          "emergencia",
+          "policía",
+          "ambulancia",
+          "fuego",
+          "ayuda",
+          "robado",
+          "hospital",
+          "urgente"
+        ],
+        "fr": [
+          "urgence",
+          "police",
+          "ambulance",
+          "feu",
+          "aide",
+          "volé",
+          "hôpital",
+          "secours"
+        ],
+        "de": [
+          "notfall",
+          "polizei",
+          "krankenwagen",
+          "feuer",
+          "hilfe",
+          "gestohlen",
+          "krankenhaus",
+          "unfall"
+        ],
+        "ja": [
+          "緊急",
+          "警察",
+          "救急車",
+          "火事",
+          "助けて",
+          "盗まれた",
+          "病院",
+          "事故"
+        ],
+        "it": [
+          "emergenza",
+          "polizia",
+          "ambulanza",
+          "fuoco",
+          "aiuto",
+          "rubato",
+          "ospedale",
+          "incidente"
+        ],
+        "cs": [
+          "nouze",
+          "policie",
+          "sanitka",
+          "požár",
+          "pomoc",
+          "ukradeno",
+          "nemocnice",
+          "nehoda"
+        ]
+      },
+      "responseKey": "emergency",
+      "suggestedActions": [
+        {
+          "type": "call",
+          "value": "112",
+          "labelKey": "emergency.generalEmergency"
+        },
+        {
+          "type": "call",
+          "value": "129",
+          "labelKey": "emergency.police"
+        },
+        {
+          "type": "scroll",
+          "value": "support",
+          "labelKey": "nav.support"
+        }
+      ]
+    },
+    {
+      "id": "lostPassport",
+      "priority": 95,
+      "emergency": true,
+      "keywords": [
+        "passport",
+        "id card",
+        "document",
+        "embassy",
+        "consulate",
+        "visa"
+      ],
+      "phrases": [
+        "i lost my passport",
+        "lost my id",
+        "stolen passport"
+      ],
+      "aliases": {
+        "sq": [
+          "pasaportë",
+          "dokument",
+          "ambasadë",
+          "konsullatë",
+          "vizë",
+          "humbur",
+          "vjedhur"
+        ],
+        "es": [
+          "pasaporte",
+          "documento",
+          "embajada",
+          "consulado",
+          "visado",
+          "perdido",
+          "robado"
+        ],
+        "fr": [
+          "passeport",
+          "document",
+          "ambassade",
+          "consulat",
+          "visa",
+          "perdu",
+          "volé"
+        ],
+        "de": [
+          "reisepass",
+          "ausweis",
+          "dokument",
+          "botschaft",
+          "konsulat",
+          "verloren",
+          "gestohlen"
+        ],
+        "ja": [
+          "パスポート",
+          "旅券",
+          "身分証",
+          "大使館",
+          "領事館",
+          "紛失",
+          "盗難"
+        ],
+        "it": [
+          "passaporto",
+          "documento",
+          "ambasciata",
+          "consolato",
+          "visto",
+          "perso",
+          "rubato"
+        ],
+        "cs": [
+          "pas",
+          "doklad",
+          "velvyslanectví",
+          "konzulát",
+          "vízum",
+          "ztracený",
+          "ukradený"
+        ]
+      },
+      "responseKey": "lostPassport",
+      "suggestedActions": [
+        {
+          "type": "scroll",
+          "value": "support",
+          "labelKey": "embassy.title"
+        },
+        {
+          "type": "call",
+          "value": "129",
+          "labelKey": "emergency.police"
+        }
+      ]
+    },
+    {
+      "id": "lostHelp",
+      "priority": 90,
+      "emergency": true,
+      "keywords": [
+        "lost",
+        "gps",
+        "location",
+        "taxi",
+        "direction"
+      ],
+      "phrases": [
+        "i got lost",
+        "i am lost",
+        "where am i"
+      ],
+      "aliases": {
+        "sq": [
+          "humbur",
+          "humba",
+          "vendndodhje",
+          "taksi",
+          "drejtim",
+          "ndihmë"
+        ],
+        "es": [
+          "perdido",
+          "perdida",
+          "ubicación",
+          "taxi",
+          "dirección",
+          "ayuda"
+        ],
+        "fr": [
+          "perdu",
+          "perdue",
+          "position",
+          "taxi",
+          "direction",
+          "aide"
+        ],
+        "de": [
+          "verlaufen",
+          "verloren",
+          "standort",
+          "taxi",
+          "richtung",
+          "hilfe"
+        ],
+        "ja": [
+          "迷子",
+          "道に迷った",
+          "場所",
+          "タクシー",
+          "道",
+          "助けて"
+        ],
+        "it": [
+          "perso",
+          "persa",
+          "posizione",
+          "taxi",
+          "direzione",
+          "aiuto"
+        ],
+        "cs": [
+          "ztratil",
+          "ztracen",
+          "poloha",
+          "taxi",
+          "směr",
+          "pomoc"
+        ]
+      },
+      "responseKey": "lostHelp",
+      "suggestedActions": [
+        {
+          "type": "scroll",
+          "value": "support",
+          "labelKey": "emergency.title"
+        },
+        {
+          "type": "call",
+          "value": "112",
+          "labelKey": "emergency.generalEmergency"
+        }
+      ]
+    },
+    {
+      "id": "packs",
+      "priority": 50,
+      "emergency": false,
+      "keywords": [
+        "pack",
+        "sim",
+        "esim",
+        "tariff",
+        "plan",
+        "price",
+        "buy",
+        "prepaid",
+        "bundle",
+        "offer"
+      ],
+      "phrases": [
+        "tourist pack",
+        "which pack",
+        "how much does it cost"
+      ],
+      "aliases": {
+        "sq": [
+          "paketë",
+          "paketa",
+          "çmim",
+          "tarifë",
+          "blej",
+          "ofertë"
+        ],
+        "es": [
+          "paquete",
+          "tarifa",
+          "precio",
+          "comprar",
+          "oferta",
+          "plan"
+        ],
+        "fr": [
+          "forfait",
+          "tarif",
+          "prix",
+          "acheter",
+          "offre"
+        ],
+        "de": [
+          "paket",
+          "tarif",
+          "preis",
+          "kaufen",
+          "angebot",
+          "prepaid"
+        ],
+        "ja": [
+          "パック",
+          "料金",
+          "プラン",
+          "購入",
+          "シム",
+          "値段"
+        ],
+        "it": [
+          "pacchetto",
+          "tariffa",
+          "prezzo",
+          "comprare",
+          "offerta",
+          "piano"
+        ],
+        "cs": [
+          "balíček",
+          "tarif",
+          "cena",
+          "koupit",
+          "nabídka"
+        ]
+      },
+      "responseKey": "packs",
+      "suggestedActions": [
+        {
+          "type": "scroll",
+          "value": "packs",
+          "labelKey": "nav.packs"
+        }
+      ]
+    },
+    {
+      "id": "buildPack",
+      "priority": 55,
+      "emergency": false,
+      "keywords": [
+        "build",
+        "custom",
+        "customize",
+        "slider",
+        "configure"
+      ],
+      "phrases": [
+        "build my own pack",
+        "create my pack",
+        "custom pack"
+      ],
+      "aliases": {
+        "sq": [
+          "ndërto",
+          "krijo",
+          "personalizo",
+          "përshtat"
+        ],
+        "es": [
+          "crear",
+          "personalizar",
+          "configurar",
+          "a medida"
+        ],
+        "fr": [
+          "composer",
+          "créer",
+          "personnaliser",
+          "sur mesure"
+        ],
+        "de": [
+          "zusammenstellen",
+          "erstellen",
+          "anpassen",
+          "individuell"
+        ],
+        "ja": [
+          "作成",
+          "カスタム",
+          "カスタマイズ",
+          "自分で"
+        ],
+        "it": [
+          "crea",
+          "personalizza",
+          "configura",
+          "su misura"
+        ],
+        "cs": [
+          "sestavit",
+          "vytvořit",
+          "přizpůsobit",
+          "vlastní"
+        ]
+      },
+      "responseKey": "buildPack",
+      "suggestedActions": [
+        {
+          "type": "scroll",
+          "value": "packs",
+          "labelKey": "nav.build"
+        }
+      ]
+    },
+    {
+      "id": "groupPack",
+      "priority": 55,
+      "emergency": false,
+      "keywords": [
+        "group",
+        "family",
+        "friends",
+        "together",
+        "couple",
+        "people"
+      ],
+      "phrases": [
+        "group pack",
+        "pack for two",
+        "travelling with friends"
+      ],
+      "aliases": {
+        "sq": [
+          "grup",
+          "familje",
+          "miq",
+          "çift",
+          "bashkë"
+        ],
+        "es": [
+          "grupo",
+          "familia",
+          "amigos",
+          "pareja",
+          "juntos"
+        ],
+        "fr": [
+          "groupe",
+          "famille",
+          "amis",
+          "couple",
+          "ensemble"
+        ],
+        "de": [
+          "gruppe",
+          "familie",
+          "freunde",
+          "paar",
+          "zusammen"
+        ],
+        "ja": [
+          "グループ",
+          "家族",
+          "友達",
+          "カップル",
+          "一緒"
+        ],
+        "it": [
+          "gruppo",
+          "famiglia",
+          "amici",
+          "coppia",
+          "insieme"
+        ],
+        "cs": [
+          "skupina",
+          "rodina",
+          "přátelé",
+          "pár",
+          "společně"
+        ]
+      },
+      "responseKey": "groupPack",
+      "suggestedActions": [
+        {
+          "type": "scroll",
+          "value": "packs",
+          "labelKey": "nav.packs"
+        }
+      ]
+    },
+    {
+      "id": "activation",
+      "priority": 50,
+      "emergency": false,
+      "keywords": [
+        "activate",
+        "activation",
+        "start",
+        "register",
+        "passport stamp"
+      ],
+      "phrases": [
+        "how to activate",
+        "activate my pack",
+        "how do i start"
+      ],
+      "aliases": {
+        "sq": [
+          "aktivizo",
+          "aktivizim",
+          "fillo",
+          "regjistro"
+        ],
+        "es": [
+          "activar",
+          "activación",
+          "empezar",
+          "registrar"
+        ],
+        "fr": [
+          "activer",
+          "activation",
+          "commencer",
+          "enregistrer"
+        ],
+        "de": [
+          "aktivieren",
+          "aktivierung",
+          "starten",
+          "registrieren"
+        ],
+        "ja": [
+          "有効化",
+          "開始",
+          "登録",
+          "アクティベーション"
+        ],
+        "it": [
+          "attivare",
+          "attivazione",
+          "iniziare",
+          "registrare"
+        ],
+        "cs": [
+          "aktivovat",
+          "aktivace",
+          "začít",
+          "registrovat"
+        ]
+      },
+      "responseKey": "activation",
+      "suggestedActions": [
+        {
+          "type": "scroll",
+          "value": "activation",
+          "labelKey": "activation.title"
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "priority": 45,
+      "emergency": false,
+      "keywords": [
+        "support",
+        "contact",
+        "store",
+        "shop",
+        "customer",
+        "140",
+        "agent",
+        "human"
+      ],
+      "phrases": [
+        "talk to someone",
+        "vodafone support",
+        "customer service"
+      ],
+      "aliases": {
+        "sq": [
+          "mbështetje",
+          "kontakt",
+          "dyqan",
+          "operator",
+          "shërbimi klientit"
+        ],
+        "es": [
+          "soporte",
+          "atención",
+          "contacto",
+          "tienda",
+          "operador"
+        ],
+        "fr": [
+          "assistance",
+          "contact",
+          "boutique",
+          "conseiller",
+          "service client"
+        ],
+        "de": [
+          "support",
+          "kontakt",
+          "shop",
+          "laden",
+          "kundendienst",
+          "berater"
+        ],
+        "ja": [
+          "サポート",
+          "問い合わせ",
+          "店舗",
+          "ショップ",
+          "カスタマーサービス"
+        ],
+        "it": [
+          "assistenza",
+          "contatto",
+          "negozio",
+          "operatore",
+          "servizio clienti"
+        ],
+        "cs": [
+          "podpora",
+          "kontakt",
+          "prodejna",
+          "operátor",
+          "zákaznický servis"
+        ]
+      },
+      "responseKey": "support",
+      "suggestedActions": [
+        {
+          "type": "call",
+          "value": "140",
+          "labelKey": "emergency.vodafoneSupport"
+        },
+        {
+          "type": "scroll",
+          "value": "explore",
+          "labelKey": "map.layerStores"
+        }
+      ]
+    },
+    {
+      "id": "internet",
+      "priority": 45,
+      "emergency": false,
+      "keywords": [
+        "internet",
+        "data",
+        "gb",
+        "hotspot",
+        "wifi",
+        "roaming",
+        "speed",
+        "slow"
+      ],
+      "phrases": [
+        "mobile data",
+        "internet not working",
+        "how much data"
+      ],
+      "aliases": {
+        "sq": [
+          "internet",
+          "të dhëna",
+          "wifi",
+          "ngadalë",
+          "roaming"
+        ],
+        "es": [
+          "internet",
+          "datos",
+          "lento",
+          "wifi",
+          "megas"
+        ],
+        "fr": [
+          "internet",
+          "données",
+          "lent",
+          "wifi",
+          "data"
+        ],
+        "de": [
+          "internet",
+          "daten",
+          "langsam",
+          "wlan",
+          "datenvolumen"
+        ],
+        "ja": [
+          "インターネット",
+          "データ",
+          "通信",
+          "遅い",
+          "ネット"
+        ],
+        "it": [
+          "internet",
+          "dati",
+          "lento",
+          "wifi",
+          "giga"
+        ],
+        "cs": [
+          "internet",
+          "data",
+          "pomalý",
+          "wifi",
+          "připojení"
+        ]
+      },
+      "responseKey": "internet",
+      "suggestedActions": [
+        {
+          "type": "scroll",
+          "value": "packs",
+          "labelKey": "nav.packs"
+        },
+        {
+          "type": "call",
+          "value": "140",
+          "labelKey": "emergency.vodafoneSupport"
+        }
+      ]
+    },
+    {
+      "id": "coverage",
+      "priority": 45,
+      "emergency": false,
+      "keywords": [
+        "coverage",
+        "signal",
+        "network",
+        "5g",
+        "4g",
+        "reception",
+        "antenna"
+      ],
+      "phrases": [
+        "is there signal",
+        "network coverage",
+        "signal in the mountains"
+      ],
+      "aliases": {
+        "sq": [
+          "mbulim",
+          "sinjal",
+          "rrjet",
+          "antenë"
+        ],
+        "es": [
+          "cobertura",
+          "señal",
+          "red",
+          "antena"
+        ],
+        "fr": [
+          "couverture",
+          "signal",
+          "réseau",
+          "antenne"
+        ],
+        "de": [
+          "netzabdeckung",
+          "empfang",
+          "signal",
+          "netz",
+          "abdeckung"
+        ],
+        "ja": [
+          "電波",
+          "カバレッジ",
+          "圏外",
+          "つながらない",
+          "信号"
+        ],
+        "it": [
+          "copertura",
+          "segnale",
+          "rete",
+          "antenna"
+        ],
+        "cs": [
+          "pokrytí",
+          "signál",
+          "síť",
+          "anténa"
+        ]
+      },
+      "responseKey": "coverage",
+      "suggestedActions": [
+        {
+          "type": "scroll",
+          "value": "explore",
+          "labelKey": "map.layerCoverage"
+        }
+      ]
+    },
+    {
+      "id": "destinations",
+      "priority": 40,
+      "emergency": false,
+      "keywords": [
+        "destination",
+        "beach",
+        "mountain",
+        "castle",
+        "museum",
+        "visit",
+        "see",
+        "ksamil",
+        "berat",
+        "gjirokaster",
+        "butrint",
+        "theth",
+        "riviera",
+        "unesco"
+      ],
+      "phrases": [
+        "what to visit",
+        "where to go",
+        "best beaches"
+      ],
+      "aliases": {
+        "sq": [
+          "destinacion",
+          "plazh",
+          "mal",
+          "kala",
+          "muze",
+          "vizito",
+          "bregdet"
+        ],
+        "es": [
+          "destino",
+          "playa",
+          "montaña",
+          "castillo",
+          "museo",
+          "visitar"
+        ],
+        "fr": [
+          "destination",
+          "plage",
+          "montagne",
+          "château",
+          "musée",
+          "visiter"
+        ],
+        "de": [
+          "reiseziel",
+          "strand",
+          "berge",
+          "burg",
+          "museum",
+          "besichtigen",
+          "sehenswürdigkeiten"
+        ],
+        "ja": [
+          "観光",
+          "ビーチ",
+          "山",
+          "城",
+          "博物館",
+          "おすすめ",
+          "名所"
+        ],
+        "it": [
+          "destinazione",
+          "spiaggia",
+          "montagna",
+          "castello",
+          "museo",
+          "visitare"
+        ],
+        "cs": [
+          "destinace",
+          "pláž",
+          "hory",
+          "hrad",
+          "muzeum",
+          "navštívit",
+          "památky"
+        ]
+      },
+      "responseKey": "destinations",
+      "suggestedActions": [
+        {
+          "type": "scroll",
+          "value": "explore",
+          "labelKey": "nav.explore"
+        }
+      ]
+    },
+    {
+      "id": "transport",
+      "priority": 40,
+      "emergency": false,
+      "keywords": [
+        "transport",
+        "bus",
+        "taxi",
+        "car",
+        "rental",
+        "ferry",
+        "airport",
+        "drive"
+      ],
+      "phrases": [
+        "how to get around",
+        "public transport",
+        "call a taxi"
+      ],
+      "aliases": {
+        "sq": [
+          "transport",
+          "autobus",
+          "taksi",
+          "makinë",
+          "traget",
+          "aeroport"
+        ],
+        "es": [
+          "transporte",
+          "autobús",
+          "taxi",
+          "coche",
+          "ferry",
+          "aeropuerto"
+        ],
+        "fr": [
+          "transport",
+          "bus",
+          "taxi",
+          "voiture",
+          "ferry",
+          "aéroport"
+        ],
+        "de": [
+          "transport",
+          "bus",
+          "taxi",
+          "auto",
+          "fähre",
+          "flughafen",
+          "mietwagen"
+        ],
+        "ja": [
+          "交通",
+          "バス",
+          "タクシー",
+          "車",
+          "フェリー",
+          "空港",
+          "レンタカー"
+        ],
+        "it": [
+          "trasporto",
+          "autobus",
+          "taxi",
+          "auto",
+          "traghetto",
+          "aeroporto"
+        ],
+        "cs": [
+          "doprava",
+          "autobus",
+          "taxi",
+          "auto",
+          "trajekt",
+          "letiště"
+        ]
+      },
+      "responseKey": "transport",
+      "suggestedActions": [
+        {
+          "type": "scroll",
+          "value": "support",
+          "labelKey": "nav.support"
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "priority": 40,
+      "emergency": false,
+      "keywords": [
+        "event",
+        "concert",
+        "festival",
+        "party",
+        "music",
+        "tonight",
+        "today",
+        "happening"
+      ],
+      "phrases": [
+        "what is happening",
+        "events today",
+        "any concerts"
+      ],
+      "aliases": {
+        "sq": [
+          "event",
+          "koncert",
+          "festival",
+          "festë",
+          "muzikë",
+          "sot",
+          "sonte"
+        ],
+        "es": [
+          "evento",
+          "concierto",
+          "festival",
+          "fiesta",
+          "música",
+          "hoy",
+          "esta noche"
+        ],
+        "fr": [
+          "événement",
+          "concert",
+          "festival",
+          "fête",
+          "musique",
+          "aujourd'hui",
+          "ce soir"
+        ],
+        "de": [
+          "veranstaltung",
+          "konzert",
+          "festival",
+          "party",
+          "musik",
+          "heute",
+          "heute abend"
+        ],
+        "ja": [
+          "イベント",
+          "コンサート",
+          "フェスティバル",
+          "祭り",
+          "音楽",
+          "今日",
+          "今夜"
+        ],
+        "it": [
+          "evento",
+          "concerto",
+          "festival",
+          "festa",
+          "musica",
+          "oggi",
+          "stasera"
+        ],
+        "cs": [
+          "akce",
+          "koncert",
+          "festival",
+          "párty",
+          "hudba",
+          "dnes",
+          "večer"
+        ]
+      },
+      "responseKey": "events",
+      "suggestedActions": [
+        {
+          "type": "scroll",
+          "value": "events",
+          "labelKey": "nav.events"
+        }
+      ]
+    },
+    {
+      "id": "safety",
+      "priority": 40,
+      "emergency": false,
+      "keywords": [
+        "safety",
+        "safe",
+        "alert",
+        "warning",
+        "crime",
+        "scam",
+        "pickpocket"
+      ],
+      "phrases": [
+        "is albania safe",
+        "safety tips",
+        "travel alerts"
+      ],
+      "aliases": {
+        "sq": [
+          "siguri",
+          "i sigurt",
+          "paralajmërim",
+          "krim",
+          "mashtrim",
+          "xhepist"
+        ],
+        "es": [
+          "seguridad",
+          "seguro",
+          "alerta",
+          "estafa",
+          "robo",
+          "carterista"
+        ],
+        "fr": [
+          "sécurité",
+          "sûr",
+          "alerte",
+          "arnaque",
+          "vol",
+          "pickpocket"
+        ],
+        "de": [
+          "sicherheit",
+          "sicher",
+          "warnung",
+          "betrug",
+          "diebstahl",
+          "taschendieb"
+        ],
+        "ja": [
+          "安全",
+          "治安",
+          "注意",
+          "詐欺",
+          "スリ",
+          "危ない"
+        ],
+        "it": [
+          "sicurezza",
+          "sicuro",
+          "allerta",
+          "truffa",
+          "furto",
+          "borseggiatore"
+        ],
+        "cs": [
+          "bezpečnost",
+          "bezpečné",
+          "varování",
+          "podvod",
+          "krádež",
+          "kapsář"
+        ]
+      },
+      "responseKey": "safety",
+      "suggestedActions": [
+        {
+          "type": "scroll",
+          "value": "support",
+          "labelKey": "safety.title"
+        }
+      ]
+    },
+    {
+      "id": "currency",
+      "priority": 40,
+      "emergency": false,
+      "keywords": [
+        "currency",
+        "money",
+        "lek",
+        "euro",
+        "dollar",
+        "exchange",
+        "convert",
+        "price",
+        "atm",
+        "cash"
+      ],
+      "phrases": [
+        "how much is",
+        "exchange rate",
+        "convert currency"
+      ],
+      "aliases": {
+        "sq": [
+          "monedhë",
+          "para",
+          "lek",
+          "euro",
+          "këmbim",
+          "kurs",
+          "bankomat"
+        ],
+        "es": [
+          "moneda",
+          "dinero",
+          "cambio",
+          "euro",
+          "efectivo",
+          "cajero"
+        ],
+        "fr": [
+          "devise",
+          "argent",
+          "change",
+          "euro",
+          "espèces",
+          "taux",
+          "distributeur"
+        ],
+        "de": [
+          "währung",
+          "geld",
+          "wechselkurs",
+          "euro",
+          "bargeld",
+          "umtausch",
+          "geldautomat"
+        ],
+        "ja": [
+          "通貨",
+          "お金",
+          "両替",
+          "レート",
+          "ユーロ",
+          "現金"
+        ],
+        "it": [
+          "valuta",
+          "soldi",
+          "cambio",
+          "euro",
+          "contanti",
+          "bancomat"
+        ],
+        "cs": [
+          "měna",
+          "peníze",
+          "směna",
+          "kurz",
+          "euro",
+          "hotovost",
+          "bankomat"
+        ]
+      },
+      "responseKey": "currency",
+      "suggestedActions": [
+        {
+          "type": "scroll",
+          "value": "home",
+          "labelKey": "currency.title"
+        }
+      ]
+    },
+    {
+      "id": "offlineGuide",
+      "priority": 40,
+      "emergency": false,
+      "keywords": [
+        "offline",
+        "download",
+        "pdf",
+        "guide",
+        "print",
+        "phrases",
+        "albanian"
+      ],
+      "phrases": [
+        "offline guide",
+        "download the guide",
+        "no internet later"
+      ],
+      "aliases": {
+        "sq": [
+          "offline",
+          "shkarko",
+          "udhëzues",
+          "fraza",
+          "printo"
+        ],
+        "es": [
+          "descargar",
+          "guía",
+          "frases",
+          "imprimir",
+          "sin conexión"
+        ],
+        "fr": [
+          "télécharger",
+          "guide",
+          "hors ligne",
+          "phrases",
+          "imprimer"
+        ],
+        "de": [
+          "herunterladen",
+          "reiseführer",
+          "offline",
+          "sätze",
+          "drucken"
+        ],
+        "ja": [
+          "オフライン",
+          "ダウンロード",
+          "ガイド",
+          "フレーズ",
+          "印刷"
+        ],
+        "it": [
+          "scaricare",
+          "guida",
+          "offline",
+          "frasi",
+          "stampare"
+        ],
+        "cs": [
+          "stáhnout",
+          "průvodce",
+          "offline",
+          "fráze",
+          "tisk"
+        ]
+      },
+      "responseKey": "offlineGuide",
+      "suggestedActions": [
+        {
+          "type": "scroll",
+          "value": "support",
+          "labelKey": "offline.title"
+        }
+      ]
+    },
+    {
+      "id": "greeting",
+      "priority": 10,
+      "emergency": false,
+      "keywords": [
+        "hello",
+        "hi",
+        "hey",
+        "thanks",
+        "thank you"
+      ],
+      "phrases": [
+        "good morning",
+        "good evening"
+      ],
+      "aliases": {
+        "sq": [
+          "përshëndetje",
+          "tungjatjeta",
+          "mirëmëngjes",
+          "mirëmbrëma",
+          "faleminderit",
+          "ckemi"
+        ],
+        "es": [
+          "hola",
+          "buenos días",
+          "buenas tardes",
+          "gracias",
+          "buenas"
+        ],
+        "fr": [
+          "bonjour",
+          "salut",
+          "bonsoir",
+          "merci"
+        ],
+        "de": [
+          "hallo",
+          "guten tag",
+          "guten morgen",
+          "danke",
+          "servus"
+        ],
+        "ja": [
+          "こんにちは",
+          "おはよう",
+          "こんばんは",
+          "ありがとう",
+          "はじめまして"
+        ],
+        "it": [
+          "ciao",
+          "buongiorno",
+          "buonasera",
+          "grazie",
+          "salve"
+        ],
+        "cs": [
+          "ahoj",
+          "dobrý den",
+          "dobré ráno",
+          "děkuji",
+          "zdravím"
+        ]
+      },
+      "responseKey": "greeting",
+      "suggestedActions": [
+        {
+          "type": "scroll",
+          "value": "packs",
+          "labelKey": "nav.packs"
+        },
+        {
+          "type": "scroll",
+          "value": "explore",
+          "labelKey": "nav.explore"
+        }
+      ]
+    }
+  ]
+}

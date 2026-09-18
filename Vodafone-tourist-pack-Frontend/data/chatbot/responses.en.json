@@ -1,0 +1,20 @@
+{
+  "greeting": "Hello! I can help you with tourist packs, activation, destinations, events, currency and emergency help. What do you need?",
+  "packs": "We have 4 tourist packs from 500 ALL (3 days) to 2,500 ALL (30 days), all with data, minutes and EU roaming info. Open the Tourist Packs section to compare them or build your own.",
+  "buildPack": "Use the \"Build Your Pack\" tab: set your days, data and calls with sliders and I'll recommend the closest available pack with a fit score.",
+  "groupPack": "Group prices: 2 people 2,600 ALL (save 400), 3 people 3,900 ALL (save 600). For 4+ people we show a custom group option. See the packs section.",
+  "activation": "Activation takes 3 steps: choose your pack, confirm, and your \"travel passport\" gets stamped.",
+  "support": "Vodafone Support is available at 140. You can also find Vodafone stores on the map's Stores layer.",
+  "emergency": "If this is an emergency, call now: General 112, Police 129, Ambulance 127, Fire 128 (verify locally). The support section has tap-to-call buttons and location sharing.",
+  "lostHelp": "Stay calm. Use the red \"I Got Lost\" button (bottom-left) to call for help, share your location, or find a taxi, hospital or Vodafone store nearby.",
+  "lostPassport": "For a lost passport or ID: 1) contact local police (129), 2) contact your embassy — the Embassy Directory in the Support section has contacts for 8 countries, 3) keep a digital copy if available. This is general guidance, not legal advice.",
+  "destinations": "Albania has amazing beaches (Ksamil, Dhërmi), UNESCO towns (Berat, Gjirokastër, Butrint), and alpine hikes (Theth, Valbona). Open the Explore map and filter by your travel style.",
+  "transport": "Only use licensed taxis and agree the price or ask for the meter first. A local taxi number is in the emergency drawer. Google Maps links for taxis, hospitals and stores are also there.",
+  "internet": "All tourist packs include mobile data (2–25 GB). If your internet is slow, check the Coverage layer on the map or call support at 140.",
+  "coverage": "Check the Vodafone Coverage layer on the Explore map: tap a region like Tirana or the Riviera to see signal levels (Excellent/Good/Limited) plus a fun fact. Illustrative data, not official measurements.",
+  "events": "The Today's Events section shows what's happening in Albania — concerts, festivals, markets — with filters for today, tomorrow and this week. Events refresh automatically from live and local sources.",
+  "safety": "Albania is generally welcoming. Key tips: licensed taxis only, exchange money at official offices, emergency number 112, watch belongings in crowds. Current alerts are in the Safety section.",
+  "currency": "Prices are always shown in Albanian Lek (ALL) with an approximate conversion to EUR, USD, GBP or CHF. Use the currency selector in the header to switch and open the full converter.",
+  "offlineGuide": "Download the Offline Travel Kit in the Support section: emergency numbers, embassy contacts and Albanian phrases in one file you can save as PDF via your browser's print dialog.",
+  "noMatchExtra": "Try asking about packs, activation, coverage, destinations, events, currency or emergency help."
+}

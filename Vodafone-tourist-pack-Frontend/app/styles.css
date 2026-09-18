@@ -1,0 +1,560 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/* Make Tailwind's `dark:` variant follow ThemeContext's `.dark` class on
+   <html> (persisted toggle) instead of the OS `prefers-color-scheme`. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Brand tokens, matched to vodafone.al's own design system ("VFGS"):
+ * red is the primary action color, teal is the secondary accent used for
+ * links/focus rather than a second red, and elevation is the soft shadow
+ * used on panels and hover states.
+ */
+:root {
+  --vf-red: #e60000;
+  --vf-red-dark: #bd0000;
+  --vf-red-deep: #820000;
+  --vf-teal: #0096ad;
+  --vf-teal-dark: #008093;
+  --vf-ink: #0d0d0d;
+  --vf-elevation: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+}
+
+/*
+ * NOTE: no custom `* { margin: 0; padding: 0 }` reset here on purpose.
+ * Tailwind's own preflight (pulled in by `@import "tailwindcss"` above)
+ * already resets margin/padding inside `@layer base`. A hand-written reset
+ * written outside of a `@layer` block sits in the (unlayered) cascade,
+ * which — per the CSS Cascade Layers spec — beats EVERY layered rule
+ * regardless of specificity. That previously nuked every margin utility
+ * (mx-auto, mt-*, space-y-*, …) site-wide, which is why nothing centered
+ * and vertical spacing looked random. Keep resets inside Tailwind's layers.
+ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  /* Safeguard only — the actual overflow sources (fixed/transformed panels,
+     carousels) must stay clipped at their own boundary. This just prevents
+     any future regression from ever showing a page-level scrollbar. */
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes mascotBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes stampIn {
+  0% {
+    opacity: 0;
+    transform: scale(2.2) rotate(-18deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.92) rotate(-9deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-9deg);
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+/* AppBackground already paints the actual page background (photo swap);
+   this only keeps default inherited text legible in dark mode. */
+.dark body {
+  color: #e5e7eb;
+}
+
+/* Layout */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  background: white;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-circle {
+  width: 30px;
+  height: 30px;
+  background: #e60000;
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-size: 24px;
+  color: #333;
+  font-weight: normal;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 0;
+}
+
+.nav-link:hover {
+  color: #e60000;
+}
+
+.nav-link.active {
+  color: #e60000;
+  font-weight: bold;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.header-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.header-button:hover {
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+/* Mobile Menu */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-nav {
+  display: none;
+  background: white;
+  border-top: 1px solid #ddd;
+  padding: 20px;
+}
+
+.mobile-nav.open {
+  display: block;
+}
+
+.mobile-nav-link {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-nav-link:hover {
+  color: #e60000;
+}
+
+/* Pack Cards */
+.pack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.pack-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.pack-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.pack-header {
+  padding: 25px;
+  text-align: center;
+  background: #f8f9fa;
+  border-bottom: 3px solid #e60000;
+}
+
+.pack-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.pack-subtitle {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.pack-price {
+  font-size: 28px;
+  font-weight: bold;
+  color: #e60000;
+}
+
+.pack-duration {
+  color: #666;
+  font-size: 14px;
+}
+
+.pack-body {
+  padding: 25px;
+}
+
+.pack-features {
+  list-style: none;
+}
+
+.pack-feature {
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+}
+
+.pack-feature:last-child {
+  border-bottom: none;
+}
+
+.pack-feature::before {
+  content: "✓";
+  color: #e60000;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.pack-footer {
+  padding: 25px;
+  background: #f8f9fa;
+}
+
+.pack-button {
+  width: 100%;
+  background: #e60000;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pack-button:hover {
+  background: #cc0000;
+}
+
+.pack-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Page Sections */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.hero-text {
+  font-size: 18px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.step {
+  text-align: center;
+  padding: 30px 20px;
+  background: white;
+  border-radius: 10px;
+}
+
+.step-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e60000;
+  margin-bottom: 15px;
+}
+
+.step-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.step-text {
+  color: #666;
+}
+
+/* Footer */
+.footer {
+  background: #000;
+  color: white;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 20px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.footer-brand .logo-text {
+  color: white;
+}
+
+.footer-description {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.footer-sections {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-section a:hover {
+  color: #e60000;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-legal {
+  color: #999;
+  font-size: 12px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .pack-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-sections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 3D hover effect for tourist package cards */
+.pack-card-3d {
+  position: relative;
+  transform: perspective(1000px) translateZ(0);
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+  transition:
+    transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.pack-card-3d:hover {
+  z-index: 10;
+  transform:
+    perspective(1000px)
+    translateY(-8px)
+    translateZ(10px)
+    rotateX(1deg)
+    rotateY(-1deg)
+    scale(1.025);
+
+  box-shadow:
+    0 18px 36px rgba(0, 0, 0, 0.16),
+    0 6px 14px rgba(230, 0, 0, 0.08);
+}
