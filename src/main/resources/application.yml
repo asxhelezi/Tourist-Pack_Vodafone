@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: tourist-pack-backend
+
+  datasource:
+
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/touristpack}
+    username: ${SPRING_DATASOURCE_USERNAME:touristpack}
+    password: ${SPRING_DATASOURCE_PASSWORD:touristpack}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+     
+      ddl-auto: ${SPRING_JPA_DDL_AUTO:update}
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  mail:
+    host: ${SMTP_HOST:smtp.example.com}
+    port: ${SMTP_PORT:587}
+    username: ${SMTP_USERNAME:}
+    password: ${SMTP_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+app:
+  
+  frontend-base-url: ${APP_FRONTEND_BASE_URL:http://localhost:3000}
+  qr-storage-dir: ${APP_QR_STORAGE_DIR:./data/qrcodes}
+
+payment:
+  mock-enabled: ${PAYMENT_MOCK_ENABLED:true}
+
+mail-sending:
+  mock-enabled: ${MAIL_MOCK_ENABLED:true}
+
+redemption:
+  expiry-days: ${REDEMPTION_EXPIRY_DAYS:30}
+
+server:
+  port: ${SERVER_PORT:8080}
+
+logging:
+  level:
+    com.vodafone.touristpack: INFO

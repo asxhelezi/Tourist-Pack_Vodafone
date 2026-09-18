@@ -1,0 +1,6 @@
+target/
+data/qrcodes/
+*.iml
+.idea/
+.vscode/
+*.log
